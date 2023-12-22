@@ -117,27 +117,11 @@ int main(void)
 	Write_gp(PA,DIR3, HIGH);
 	DelayInit();
 	
-/*	
-	 Out = inv_KE(120, 0, 80);
- Robot_target(Out);
- Robot_pos();
- 
- Robot_move(angle_1,1);
 
-Robot_move(angle_2,2);
-  Robot_move(angle_3,3);
-	 DelayMs(1000);
-*/
-//Out = inv_KE(120,0,240);
-
-//Robot_target(Out);
-//Robot_pos();
 Point point_A = {previous[1], previous[2]};
 Point point_B = {present[1], present[2]};
 
 
-//Robot_move(30,1);
-//DelayMs(500);
 Out = inv_KE(120, 0, 80);
 Robot_target(Out);
 Robot_pos();
@@ -157,30 +141,13 @@ Robot_move(angle_3,3);
 
 
 
-/*
-Robot_move(38.72,2);
-Robot_move(-12.70,3);
-DelayMs(100);
-Robot_move(80.85,2);
-Robot_move(-83.83,3);
-*/
+
 
 //Robot_move(angle_2,2);  //-90   +ve in angle makes the right motor up wards i.e gear turns backwards, theta 2
 // Robot_move(angle_3,3);  //90  -ve in angle makes the left motor downwards i.e gear turns forward. theta 3
  DelayMs(500);
 
-/*
- Out = inv_KE(60, 0, 240);
- Robot_target(Out);
- Robot_pos();	
- Robot_move(angle_1,1);
- Robot_move(angle_2,2);
- Robot_move(angle_3,3);
 
- DelayMs(500);
-
-
-*/
  
 	while(1){
 		
@@ -294,40 +261,10 @@ void Robot_move(double angle, int type){
 	present[1]= temp[1];
 	present[2] = temp[2];
  }	 
-/*
 
-	//printf("%.2f\n", *(Out+1));
-	
-//	if(*(Out+2) >90){
-		
-//		*(Out+2) = *(Out+2)-90;
-//	}
-//	printf("%.2f\n", *(Out+2));
-	//printf("\n");
 	
 
-		
-}
-	
 
-/*
-
-void linear_steps(Point a, Point b, int t){
-	     for (int step = 0; step < num_steps; ++step) {
-        double t = (double)step / (num_steps - 1);
-        
-        Point interpolated_point = linear_interpolation(a, b, t);
-        
-      //  printf("Step %d: Interpolated Point (x, y) = (%.2lf, %.2lf)\n", step + 1, interpolated_point.x, interpolated_point.y);
-        
-        // Simulate robotic arm movement (replace with actual control commands)
-        DelayUs(100000);  // Simulated delay in microseconds
-    }
-	
-	
-	
-}
-*/
 
 
 

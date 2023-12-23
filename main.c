@@ -51,6 +51,7 @@ void left_Motor(double angle);
 void right_Motor(double angle);
 void Robot_move(double angle, int type);
 void Robot_target(double* Out);
+
 //Point Linear_interpolation(Point p1, Point p2, double t);
 
 
@@ -122,23 +123,33 @@ Point point_A = {previous[1], previous[2]};
 Point point_B = {present[1], present[2]};
 
 
-Out = inv_KE(120, 0, 80);
+Out = inv_KE(120,70, 80);
 Robot_target(Out);
 Robot_pos();
+
 Robot_move(angle_1,1);
 Robot_move(angle_2,2);
 Robot_move(angle_3,3);
 
 DelayMs(4000);
 
-Out = inv_KE(60, 0, 240); //119.57, -113.05 //119.5, -96.52
+Out = inv_KE(60, -70, 240); //119.57, -113.05 //119.5, -96.52
 Robot_target(Out);
 Robot_pos();
 
 Robot_move(angle_1,1);
 Robot_move(angle_2,2);
-Robot_move(angle_3,3);	
+Robot_move(angle_3,3);
 
+DelayMs(3000);
+
+Out = inv_KE(120, 0, 80);
+Robot_target(Out);
+Robot_pos();
+
+Robot_move(angle_1,1);
+Robot_move(angle_3, 3);
+Robot_move(angle_2,2);
 
 
 
@@ -199,18 +210,20 @@ void Robot_move(double angle, int type){
 		case 1:
 			if(angle <0 ){
 		Write_gp(PA, DIR1, LOW);
-		//angle1 = -angle1;
+		angle = -angle;
     lower_Motor(angle);}
 	   else {
+		Write_gp(PA, DIR1, HIGH);
 		lower_Motor(angle);
 	   }
 	break;
 		case 2:
 		if(angle <0 ){
 		Write_gp(PA, DIR3, LOW);
-	//	angle = -angle;
+		angle = -angle;
     right_Motor(angle);}
 	   else {
+			 Write_gp(PA, DIR3, HIGH);
 		right_Motor(angle);
 	   }
 	break;
@@ -262,7 +275,7 @@ void Robot_move(double angle, int type){
 	present[2] = temp[2];
  }	 
 
-	
+
 
 
 

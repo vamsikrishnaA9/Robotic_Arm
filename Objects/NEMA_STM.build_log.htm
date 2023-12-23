@@ -38,51 +38,48 @@ main.c(40): warning: no previous extern declaration for non-static variable 'num
 main.c(40): note: declare 'static' if the variable is not intended to be used outside of this translation unit
  int num_steps = 50;
  ^
-main.c(63): warning: no previous prototype for function 'linear_interpolation' [-Wmissing-prototypes]
+main.c(64): warning: no previous prototype for function 'linear_interpolation' [-Wmissing-prototypes]
 Point linear_interpolation(Point p1, Point p2, double t) {
       ^
-main.c(63): note: declare 'static' if the function is not intended to be used outside of this translation unit
+main.c(64): note: declare 'static' if the function is not intended to be used outside of this translation unit
 Point linear_interpolation(Point p1, Point p2, double t) {
 ^
 static 
-main.c(86): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+main.c(87): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
         double r1,r2,r3;
                ^
-main.c(135): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+main.c(122): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
 Point point_A = {previous[1], previous[2]};
       ^
-main.c(136): warning: unused variable 'point_B' [-Wunused-variable]
+main.c(123): warning: unused variable 'point_B' [-Wunused-variable]
 Point point_B = {present[1], present[2]};
       ^
-main.c(135): warning: unused variable 'point_A' [-Wunused-variable]
+main.c(122): warning: unused variable 'point_A' [-Wunused-variable]
 Point point_A = {previous[1], previous[2]};
       ^
-main.c(192): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+main.c(170): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
         float small_ang = 360/angle;
               ~~~~~~~~~   ~~~^~~~~~
-main.c(193): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+main.c(171): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
         int value =(int)(total/small_ang) ;
                          ^~~~~~
-main.c(205): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+main.c(183): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
 float small_ang = 360/angle;
       ~~~~~~~~~   ~~~^~~~~~
-main.c(206): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+main.c(184): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
 int value =(int)(total/small_ang);
                  ^~~~~~
-main.c(218): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+main.c(196): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
 float small_ang = 360/angle;
       ~~~~~~~~~   ~~~^~~~~~
-main.c(219): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+main.c(197): warning: implicit conversion from 'int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
 int value =(int)(total/small_ang);
                  ^~~~~~
-main.c(313): warning: '/*' within block comment [-Wcomment]
-/*
-^
-14 warnings generated.
+13 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=9964 RO-data=524 RW-data=32 ZI-data=1768  
-".\Objects\NEMA_STM.axf" - 0 Error(s), 14 Warning(s).
+Program Size: Code=10100 RO-data=524 RW-data=32 ZI-data=1768  
+".\Objects\NEMA_STM.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 
